@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/header.css" />
+  </head>
+
+  <body>
+ 
+
+   <section class="section">
+      <form class="form js-speaker-form">
+        <div class="form-field">
+          <label class="form-label" for="name">Ім'я</label>
+          <input
+            class="form-input"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Наталія Василівна"
+            autofocus
+          />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="email">пошта</label>
+          <input
+            class="form-input"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="adsfs@gmail.com"
+          />
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="tel">телефон</label>
+          <input
+            class="form-input"
+            type="tel"
+            id="tel"
+            name="tel"
+            placeholder="+380-***-**-**"
+          />
+        </div>
+
+        <div role="group" class="group">
+          <h2 class="group-titel">теми доповіді</h2>
+          <ul class="topic-options">
+            <li>
+              <input type="checkbox" name="topic" value="html" id="html" />
+              <label for="html">html</label>
+            </li>
+            <li>
+              <input type="checkbox" name="topic" value="css" id="css" />
+              <label for="css">css</label>
+            </li>
+            <li>
+              <input type="checkbox" name="topic" value="js" id="js" />
+              <label for="js">JavaScript</label>
+            </li>
+          </ul>
+        </div>
+
+        <div role="group" class="group">
+          <h2 class="group-titel">ваш рівень</h2>
+          <ul class="experience-options">
+            <li>
+              <input
+                type="radio"
+                name="experience"
+                value="junior"
+                id="junior"
+                checked
+              />
+              <label for="junior">junior</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="experience"
+                value="middle"
+                id="middle"
+              />
+              <label for="middle">middle</label>
+            </li>
+            <li>
+              <input
+                type="radio"
+                name="experience"
+                value="senior"
+                id="senior"
+              />
+              <label for="senior">Senior</label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="form-field">
+          <label for="date">дата доповіді</label>
+          <input
+          class="date"
+            type="date"
+            id="date"
+            name="date"
+            min="2022-08-15"
+            max="2022-08-18"
+          />
+        </div>
+
+        <div class="form-field pdf">
+          <label for="pdf">загрузіть копію доповіді</label>
+          <input type="file" id="pff" name="pdf" />
+        </div>
+
+        <div class="form-field">
+          <label for="comment">залиште коментарій</label>
+          <textarea
+            name="comment"
+            id="comment"
+            cols="50"
+            rows="4"
+            placeholder="Уточніть деталі доповіді"
+          ></textarea>
+        </div>
+
+        <div class="form-field">
+          <input type="checkbox" id="policy" name="policy" />
+          <label for="policy">Даю згоду на обробку данних</label>
+        </div>
+
+        <button type="submit">залишити заявку</button>
+      </form>
+
+    <form class="select" action="javascript:void(0);">
+        <select class="select-custom">
+            <optgroup label="Developer">
+                <option value="frontend">Frontend</option>
+            </optgroup>
+            <optgroup label="Base skills">
+                <option value="html" selected>HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">JavaScript</option>
+            </optgroup>
+            <optgroup label="Frameworks" disabled>
+                <option value="vue">Vue</option>
+                <option value="react">React + GraphQL</option>
+                <option value="angular">Angular</option>
+            </optgroup>
+        </select>
+        <button type="submit">Відправити</button>
+        <button type="reset">Відправити</button>
+    </form>
+
+   
+
+    </section>
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
+  </body>
+</html>
+
+
+
